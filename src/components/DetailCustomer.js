@@ -28,6 +28,7 @@ function DetailCustomer() {
         })
     }
 
+    
     const state = useAsync(getCustomer);
     const { loading, error, data: customer } = state;
     console.log(customer);
@@ -62,6 +63,7 @@ function DetailCustomer() {
                </TableBody>
            </Table>
            <button onClick={onDelete}> 삭제</button>
+           <button><Link to={`/edit/${customer[0].c_no}`}>수정</Link></button>
            <button onClick={(e)=> (e.preventDefault() )}><Link to="/">리스트보기</Link></button>
         </div>
     );

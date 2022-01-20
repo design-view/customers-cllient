@@ -3,7 +3,7 @@ import { Table, TableBody, TableCell, TableRow } from '@material-ui/core';
 import { useParams , Link, useNavigate  } from 'react-router-dom';
 import axios from 'axios';
 import useAsync from '../hooks/useAsync';
-
+import { API_URL } from '../config/constants';
 function DetailCustomer() {
     const param = useParams();
     const navigate = useNavigate();
@@ -11,7 +11,7 @@ function DetailCustomer() {
     const { id } = param;
     async function getCustomer() {
         const response = await axios.get(
-            `http://localhost:8080/customer/${id}`
+            `${API_URL}/customer/${id}`
         )
         return response.data;
     }
@@ -19,7 +19,7 @@ function DetailCustomer() {
     //삭제하기
     const onDelete = () => {
         console.log('aaaaaaaaaaa');
-        axios.delete(`http://localhost:8080/customer/${id}`)
+        axios.delete(`${API_URL}/customer/${id}`)
         .then((result)=>{
             console.log('삭제되었습니다.');
             navigate(-1)

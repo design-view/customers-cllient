@@ -3,6 +3,7 @@ import { Table, TableBody, TableCell, TableRow } from '@material-ui/core';
 import { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import { API_URL } from '../config/constants';
 function CreateCustomer() {
     const navigate = useNavigate();
     const [ formData, setFormData ] = useState({
@@ -34,7 +35,7 @@ function CreateCustomer() {
     }
     //post전송 axios
     function insertCustomer(){
-        axios.post("http://localhost:8080/addCustomer",formData)
+        axios.post(`${API_URL}/addCustomer`,formData)
         .then(function(res){
             console.log(res);
             navigate(-1);

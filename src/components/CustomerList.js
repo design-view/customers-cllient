@@ -3,12 +3,13 @@ import { Table, TableBody, TableHead,TableCell, TableRow } from '@material-ui/co
 import Customer from './Customer';
 import axios from 'axios';
 import useAsync from '../hooks/useAsync';
+import { API_URL } from '../config/constants';
 
 //비동기 전송으로 get요청을 해주는 함수
 //응답받은 데이터를 리턴해줌
 async function getCustomers(){
     const response = await axios.get(
-        'http://localhost:8080/customers'
+        `${API_URL}/customers`
     )
     return response.data;
 }

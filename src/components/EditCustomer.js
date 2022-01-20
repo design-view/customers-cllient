@@ -3,7 +3,7 @@ import { useParams , Link, useNavigate  } from 'react-router-dom';
 import axios from 'axios';
 import { Table, TableBody, TableCell, TableRow } from '@material-ui/core';
 import useAsync from '../hooks/useAsync';
-
+import { API_URL } from '../config/constants';
 function EditCustomer() {
     const param = useParams();
     const navigate = useNavigate();
@@ -22,7 +22,7 @@ function EditCustomer() {
     const { id } = param;
     //put전송 axios
     function insertCustomer(form){
-        axios.put(`http://localhost:8080/editCustomer/${id}`,{
+        axios.put(`${API_URL}/editCustomer/${id}`,{
             c_name:form.c_name.value,
             c_phone:form.c_phone.value,
             c_birthday:form.c_birthday.value,
@@ -38,7 +38,7 @@ function EditCustomer() {
     }
     async function getCustomer() {
         const response = await axios.get(
-            `http://localhost:8080/customer/${id}`
+            `${API_URL}/customer/${id}`
         )
         return response.data;
     }

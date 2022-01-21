@@ -8,6 +8,7 @@ function EditCustomer() {
     const param = useParams();
     const navigate = useNavigate();
     const [ gender, setGender ] = useState("");
+    console.log(gender);
     const onChange = (e) => {
         customer[0].c_gender = e.target.value;
         setGender(e.target.value);
@@ -17,7 +18,6 @@ function EditCustomer() {
         // console.log(e.target.c_name.value);
         insertCustomer(e.target);   
     }
-     
     console.log(param);
     const { id } = param;
     //put전송 axios

@@ -54,7 +54,11 @@ function CreateCustomer() {
             });
             return null;
         }
-        insertCustomer();
+        if(formData.c_name !== "" && formData.c_phone !== "" && 
+        formData.c_birthday !== "" && formData.c_gender !== "" && formData.c_addr !== ""){
+            insertCustomer();
+        }
+        
         setFormData({
             c_name:"",
             c_phone:"",

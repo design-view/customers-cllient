@@ -8,10 +8,10 @@ function Customer({data}) {
         <TableRow>
         <TableCell><Link to={`/customer/${data.c_no}`}>{data.c_no}</Link></TableCell>
         <TableCell><Link to={`/customer/${data.c_no}`}>{data.c_name} </Link></TableCell>
-        <TableCell>{data.c_phone}</TableCell>
-        <TableCell>{data.c_birthday}</TableCell>
-        <TableCell>{data.c_gender}</TableCell>
-        <TableCell>{data.c_addr}</TableCell>
+        <TableCell><Link to={`/customer/${data.c_no}`}>{data.c_phone}</Link></TableCell>
+        <TableCell><Link to={`/customer/${data.c_no}`}>{data.c_birthday}</Link></TableCell>
+        <TableCell><Link to={`/customer/${data.c_no}`}>{data.c_gender}</Link></TableCell>
+        <TableCell><Link to={`/customer/${data.c_no}`}>{data.c_addr}</Link></TableCell>
         </TableRow>
        
     );

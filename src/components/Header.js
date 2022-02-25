@@ -8,7 +8,7 @@ function Header({title}) {
             <ul>
                 <li><Link to="/">고객리스트 보기</Link></li>
                 <li><Link to="/create">신규 고객 등록하기</Link></li>
-                <li>고객 검색</li>
+                <li><Link to="/search">고객 검색</Link></li>
             </ul>
         </div>
     );
